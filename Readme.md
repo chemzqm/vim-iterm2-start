@@ -5,8 +5,7 @@ Dispatch a task for iTerm2 in MacVim, used for async command line task.
 Prerequirement:
 
 * iTerm2 > 2.9 currently in beta test
-* fish shell
-* fish profile of iTerm2 profile if you need to run task in new tab
+* fish shell (otherwise you will need change the code)
 * Knowledge of command line tools
 
 ## Command
