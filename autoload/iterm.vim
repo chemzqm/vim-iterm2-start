@@ -7,13 +7,17 @@ function! Iterm#Start(command, opts)
   let script = s:isolate(a:command, a:opts)
   let title = get(a:opts, 'title', 'vim-iterm2-start')
   let dir = get(a:opts, 'dir', getcwd())
+  let newtab = a:opts.newtab
   return s:osascript(
       \ 'if application "iTerm" is not running',
       \   'error',
       \ 'end if') && s:osascript(
       \ 'tell application "iTerm"',
       \   'tell current window',
-      \     a:opts.newtab ? 'create tab with default profile' : '',
+      \     newtab ? 'create tab with default profile' : '',
+      \     newtab ? 'tell application "MacVim"' : '',
+      \     newtab ? 'activate' : '',
+      \     newtab ? 'end tell' : '',
       \     'tell current session',
       \       'set title to "' . title . '"',
       \       'set name to "' . title . '"',
