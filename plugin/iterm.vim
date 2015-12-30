@@ -1,6 +1,14 @@
+" ============================================================================
+" Description: Start a task in iTerm2
+" Author: Qiming Zhao <chemzqm@gmail.com>
+" Licence: Vim licence
+" Version: 0.1
+" Last Modified:  December 30, 2015
+" ============================================================================
 if exists('did_vim_iterm2_start_loaded') || v:version < 700
   finish
 endif
+
 let did_vim_iterm2_start_loaded = 1
 
 function! s:ItermStart(bang, tab, ...)
