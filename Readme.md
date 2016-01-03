@@ -3,10 +3,15 @@
 Dispatch a task for iTerm2 in MacVim, used for async command line task (eg: git
 push and unite tests)
 
-Prerequirement:
+It works much like [vim-dispatch](https://github.com/tpope/vim-dispatch), the
+difference is it's works (only) with MacVim, iTerm2 latest and fish shell, in
+order to keep it quite simple.  The reason I made this is I found changing the
+code of vim-dispatch is quite hard, and it doesn't support iTerm2 > 2.9
+
+Requirement:
 
 * MacVim 7.3+
-* iTerm2 > 2.9 currently in beta test
+* iTerm2 > 2.9 currently in beta test (latest lightly build is preferred)
 * fish shell (otherwise you will need change the code)
 * Knowledge of command line tools
 
@@ -18,8 +23,8 @@ Prerequirement:
     iTerm window
 
     * -dir=...     run command in given directory
-    * -title=...   set lable for iTerm2
-    * -no-wait      disable the default prompt of `press enter to continue` on
+    * -title=...   set label for iTerm2
+    * -no-wait     disable the default prompt of `press enter to continue` on
       command error
 
 * `[!]ItermStartTab [options] {command}`
@@ -55,8 +60,8 @@ test run in background by adding below lines to your `.vimrc`:
 ## Send message back to MacVim
 
 You can make use of the vim feature `clientserver` to send message back to your
-macvim, here is a example of creating a filter programe that parse ouput of
-mocha and fill the quickfix of macvim:
+MacVim, here is a example of creating a filter program that parse output of
+mocha and fill the quickfix of MacVim
 
     https://gist.github.com/chemzqm/fd1313206c182884efbc
 
