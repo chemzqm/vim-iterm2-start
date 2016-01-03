@@ -43,7 +43,8 @@ PREREQUIREMENT		|iterm-start-prerequirement|
 INSTALLATION		|iterm-start-installation|
 INTERFACE		|iterm-start-interface|
   COMMANDS			|iterm-start-commands|
-KNOWINGISSUE		|iterm_start_issue|
+  VARIABLES			|iterm-start-variables|
+KNOWNISSUE		|iterm_start_issue|
 CHANGELOG		|iterm-start-changelog|
 
 ==============================================================================
@@ -98,9 +99,16 @@ COMMANDS 				*iterm-start-commands*
 	Share same {options} as |:ItermStart|, except run task in a new
 	tab of iTerm2
 
+------------------------------------------------------------------------------
+VARIABLES 				*iterm-start-variables*
+
+If you use iterm2 and not using fish, you can make a profile named fish, and
+make it the profile for iterm-stat by using *g:iterm-start-profile*  >
+
+	let g:iterm-start-profile = 'fish'
 
 ==============================================================================
-KNOWINGISSUE				 *iterm-start-issue*
+KNOWNISSUE				 *iterm-start-issue*
 
 Iterm2 has a bug as when new tab created, it will be focued with called by
 activate commmand, The work around is when using |:itermStartTab|, MacVim will
