@@ -5,11 +5,11 @@
 " Version: 0.1
 " Last Modified:  December 30, 2015
 " ============================================================================
-if exists('did_vim_iterm2_start_loaded') || !has('gui_macvim') || v:version < 700
+if exists('g:did_vim_iterm2_start_loaded') || !has('gui_macvim') || v:version < 700
   finish
 endif
 
-let did_vim_iterm2_start_loaded = 1
+let g:did_vim_iterm2_start_loaded = 1
 
 function! s:ItermStart(bang, tab, ...)
   let opts = s:ParseArgs(a:000)
