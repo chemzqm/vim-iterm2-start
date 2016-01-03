@@ -29,3 +29,39 @@ Prerequirement:
 
     *NOTE:*  iTerm2 version > Build 2.9.20160103-nightly is required to make
     iTerm2 run job at background corrently
+
+## Global varialbes
+
+* `g:iterm_start_profile` is used for control the profile used by
+  `ItermStartTab`, you can crate a profile called `fish` that use fish shell, and 
+  config `ItermStartTab` to use fish shell by add:
+
+    let g:iterm_start_profile = 'fish'
+
+  in your `.vimrc`
+
+## Intergration
+
+If you use [vim-test](https://github.com/janko-m/vim-test), you can make your
+test run in background by adding below lines to your `.vimrc`:
+
+    function! StartTest(cmd)
+      execute 'ItermStartTab! ' . a:cmd
+    endfunction
+
+    let g:test#custom_strategies = {'start': function('StartTest')}
+    let g:test#strategy = 'start'
+
+## Send message back to MacVim
+
+You can make use of the vim feature `clientserver` to send message back to your
+macvim, here is a example of creating a filter programe that parse ouput of
+mocha and fill the quickfix of macvim:
+
+    https://gist.github.com/chemzqm/fd1313206c182884efbc
+
+So you can jump to error location directly in your MacVim.
+
+## License
+
+MIT
