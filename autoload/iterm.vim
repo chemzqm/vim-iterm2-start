@@ -7,7 +7,7 @@ function! Iterm#Start(command, opts)
   let script = s:isolate(a:command, a:opts)
   let title = get(a:opts, 'title', 'vim-iterm2-start')
   let profile = get(a:opts, 'profile', 'default')
-  if a:opts.profile ==# 'default'
+  if get(a:opts, 'profile', 'default') ==# 'default'
     let profile = 'default profile'
   else
     let profile = 'profile "' . a:opts.profile . '"'
@@ -15,24 +15,21 @@ function! Iterm#Start(command, opts)
   let dir = get(a:opts, 'dir', getcwd())
   let newtab = a:opts.newtab
   return s:osascript(
-      \ 'if application "iTerm" is not running',
+      \ 'if application "iTerm2" is not running',
       \   'error',
       \ 'end if') && s:osascript(
-      \ 'tell application "iTerm"',
+      \ 'tell application "iTerm2"',
       \   'tell current window',
       \     newtab ? 'create tab with ' . profile : '',
-      \     newtab ? 'tell application "MacVim"' : '',
-      \     newtab ? 'activate' : '',
-      \     newtab ? 'end tell' : '',
       \     'tell current session',
       \       'set title to "' . title . '"',
       \       'set name to "' . title . '"',
       \       'write text ""',
       \       'write text "clear"',
       \       'write text ' . s:escape('fish ' . script. ' %self'),
-      \       'end tell',
       \       a:opts.active ? 'activate' : '',
       \     'end tell',
+      \   'end tell',
       \ 'end tell')
 endfunction
 
@@ -66,7 +63,10 @@ endfunction
 
 function! s:osascript(...) abort
   let args = join(map(copy(a:000), '" -e ".shellescape(v:val)'), '')
-  call system('osascript'. args)
+  let output =  system('osascript'. args)
+  if v:shell_error && output !=# ""
+    echohl Error | echon output | echohl None
+  endif
   return !v:shell_error
 endfunction
 

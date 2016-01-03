@@ -1,6 +1,7 @@
 # Vim-iterm2-start
 
-Dispatch a task for iTerm2 in MacVim, used for async command line task.
+Dispatch a task for iTerm2 in MacVim, used for async command line task (eg: git
+push and unite tests)
 
 Prerequirement:
 
@@ -13,12 +14,18 @@ Prerequirement:
 
 * `[!]ItermStart [options] {command}`
 
-    Start task in current session of iTerm2, when prefix with `!`, not foucs the iTerm window
+    Start task in current session of iTerm2, when prefix with `!`, not foucs the
+    iTerm window
 
     * -dir=...     run command in given directory
     * -title=...   set lable for iTerm2
-    * -no-wait      disable the default prompt of `press enter to continue` on command error
+    * -no-wait      disable the default prompt of `press enter to continue` on
+      command error
 
 * `[!]ItermStartTab [options] {command}`
 
-    Start task in a new tab session of iTerm2, options is the same as `ItermStart` command
+    Start task in a new tab session of iTerm2, options is the same as
+    `ItermStart` command
+
+    *NOTE:*  iTerm2 version > Build 2.9.20160103-nightly is required to make
+    iTerm2 run job at background corrently
