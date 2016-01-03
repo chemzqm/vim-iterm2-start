@@ -15,6 +15,7 @@ function! s:ItermStart(bang, tab, ...)
   let opts = s:ParseArgs(a:000)
   let opts.active = len(a:bang) ? 0 : 1
   let opts.newtab = a:tab
+  let opts.profile = get(g:, 'iterm_start_profile', 'default')
   let command = opts.command
   call remove(opts, 'command')
   call Iterm#Start(command, opts)

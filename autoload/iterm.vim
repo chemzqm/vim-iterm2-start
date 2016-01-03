@@ -6,6 +6,12 @@ let g:autoloaded_vim_iterm2_start = 1
 function! Iterm#Start(command, opts)
   let script = s:isolate(a:command, a:opts)
   let title = get(a:opts, 'title', 'vim-iterm2-start')
+  let profile = get(a:opts, 'profile', 'default')
+  if a:opts.profile ==# 'default'
+    let profile = 'default profile'
+  else
+    let profile = 'profile "' . a:opts.profile . '"'
+  endif
   let dir = get(a:opts, 'dir', getcwd())
   let newtab = a:opts.newtab
   return s:osascript(
@@ -14,7 +20,7 @@ function! Iterm#Start(command, opts)
       \ 'end if') && s:osascript(
       \ 'tell application "iTerm"',
       \   'tell current window',
-      \     newtab ? 'create tab with default profile' : '',
+      \     newtab ? 'create tab with ' . profile : '',
       \     newtab ? 'tell application "MacVim"' : '',
       \     newtab ? 'activate' : '',
       \     newtab ? 'end tell' : '',
