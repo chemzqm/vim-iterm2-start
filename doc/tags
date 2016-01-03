@@ -1,5 +1,6 @@
 :ItermStart	iterm2-stat.txt	/*:ItermStart*
 :ItermStartTab	iterm2-stat.txt	/*:ItermStartTab*
+g:iterm-start-profile	iterm2-stat.txt	/*g:iterm-start-profile*
 help-tags	tags	1
 iterm-start-changelog	iterm2-stat.txt	/*iterm-start-changelog*
 iterm-start-commands	iterm2-stat.txt	/*iterm-start-commands*
@@ -7,5 +8,7 @@ iterm-start-contents	iterm2-stat.txt	/*iterm-start-contents*
 iterm-start-installation	iterm2-stat.txt	/*iterm-start-installation*
 iterm-start-interface	iterm2-stat.txt	/*iterm-start-interface*
 iterm-start-introduction	iterm2-stat.txt	/*iterm-start-introduction*
+iterm-start-issue	iterm2-stat.txt	/*iterm-start-issue*
 iterm-start-prerequirement	iterm2-stat.txt	/*iterm-start-prerequirement*
+iterm-start-variables	iterm2-stat.txt	/*iterm-start-variables*
 iterm-start.txt	iterm2-stat.txt	/*iterm-start.txt*
