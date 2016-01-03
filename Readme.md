@@ -17,7 +17,7 @@ Requirement:
 
 ## Command
 
-* `[!]ItermStart [options] {command}`
+* `ItermStart[!] [options] {command}`
 
     Start task in current session of iTerm2, when prefix with `!`, not foucs the
     iTerm window
@@ -27,7 +27,7 @@ Requirement:
     * -no-wait     disable the default prompt of `press enter to continue` on
       command error
 
-* `[!]ItermStartTab [options] {command}`
+* `ItermStartTab[!] [options] {command}`
 
     Start task in a new tab session of iTerm2, options is the same as
     `ItermStart` command
