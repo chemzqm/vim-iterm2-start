@@ -2,6 +2,7 @@ if exists('g:autoloaded_vim_iterm2_start')
   finish
 endif
 let g:autoloaded_vim_iterm2_start = 1
+let s:success_image = expand('<sfile>:h:h').'/success.png'
 
 function! Iterm#Start(command, opts)
   let script = s:isolate(a:command, a:opts)
@@ -38,7 +39,11 @@ function! s:isolate(command, opts)
   let onend = a:opts.newtab ? '  kill $argv[1]' : ''
   let dir = get(a:opts, 'dir', getcwd())
   if executable('growlnotify') && get(g:, 'iterm_start_growl_enable', 0)
-    let growl = ' growlnotify -m succeed'
+    if executable('terminal-notifier')
+      let growl = 'terminal-notifier -appIcon '.s:success_image.'  -message ''succeed'''
+    else
+      let growl = ' growlnotify -m succeed'
+    endif
   end
   let lines = [
         \ 'cd ' . fnameescape(dir),
