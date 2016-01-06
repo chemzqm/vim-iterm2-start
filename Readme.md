@@ -45,6 +45,9 @@ Requirement:
 
   in your `.vimrc`
 
+* `let g:iterm_start_enable=1` would enable Mac notification on command success.
+  support `growl` and `terminal-notifier`
+
 ## Intergration
 
 If you use [vim-test](https://github.com/janko-m/vim-test), you can make your
