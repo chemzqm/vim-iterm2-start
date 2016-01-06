@@ -15,6 +15,12 @@ Requirement:
 * fish shell (otherwise you will need change the code)
 * Knowledge of command line tools
 
+## Update
+
+* notification enabled, looks like:
+
+<img width="355" alt="screen shot 2016-01-07 at 6 17 41 am" src="https://cloud.githubusercontent.com/assets/251450/12157114/603c4ac2-b50a-11e5-82e1-f2054abf3337.png">
+
 ## Command
 
 * `ItermStart[!] [options] {command}`
