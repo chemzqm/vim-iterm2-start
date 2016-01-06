@@ -40,7 +40,8 @@ function! s:isolate(command, opts)
   let dir = get(a:opts, 'dir', getcwd())
   if executable('growlnotify') && get(g:, 'iterm_start_growl_enable', 0)
     if executable('terminal-notifier')
-      let growl = 'terminal-notifier -appIcon '.s:success_image.'  -message '''''
+      let growl = 'terminal-notifier -appIcon '.s:success_image
+          \.' -sender org.vim.MacVim -title '''.a:command.'''  -message '''''
     else
       let growl = ' growlnotify -m ""'
     endif
