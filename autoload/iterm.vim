@@ -40,9 +40,9 @@ function! s:isolate(command, opts)
   let dir = get(a:opts, 'dir', getcwd())
   if executable('growlnotify') && get(g:, 'iterm_start_growl_enable', 0)
     if executable('terminal-notifier')
-      let growl = 'terminal-notifier -appIcon '.s:success_image.'  -message ''succeed'''
+      let growl = 'terminal-notifier -appIcon '.s:success_image.'  -message '''''
     else
-      let growl = ' growlnotify -m succeed'
+      let growl = ' growlnotify -m ""'
     endif
   end
   let lines = [
