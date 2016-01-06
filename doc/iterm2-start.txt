@@ -107,13 +107,13 @@ VARIABLES 				*iterm-start-variables*
 If you use iterm2 and not using fish, you can make a profile named fish, and
 make it the profile for iterm-start
 
-	let g:iterm-start-profile = 'fish'
+	let g:iterm_start_profile = 'fish'
 <
 					*g:iterm-start-growl-enable*
 
 To enable growl notification: >
 	
-	let g:iterm-start-growl-enable = 1
+	let g:iterm_start_growl_enable = 1
 <
 
 ==============================================================================

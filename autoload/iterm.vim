@@ -37,7 +37,7 @@ endfunction
 function! s:isolate(command, opts)
   let onend = a:opts.newtab ? '  kill $argv[1]' : ''
   let dir = get(a:opts, 'dir', getcwd())
-  if executable('growlnotify') && get(g:, 'iterm-start-growl-enable', 0)
+  if executable('growlnotify') && get(g:, 'iterm_start_growl_enable', 0)
     let growl = ' growlnotify -m succeed'
   end
   let lines = [
