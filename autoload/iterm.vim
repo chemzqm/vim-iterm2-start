@@ -41,7 +41,7 @@ function! s:isolate(command, opts)
   if executable('growlnotify') && get(g:, 'iterm_start_growl_enable', 0)
     if executable('terminal-notifier')
       let growl = 'terminal-notifier -sender org.vim.MacVim -title ''done'''
-          \.'  -message ''.a:command.'''
+          \.'  -message '''.a:command.''''
     else
       let growl = ' growlnotify -m ""'
     endif
