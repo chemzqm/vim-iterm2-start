@@ -59,6 +59,7 @@ function! s:isolate(command, opts)
         \]
   if get(a:opts, 'wait', 0)
     let lines = lines + [
+      \ 'echo -n \a',
       \ 'echo ''<----- press any key to continue ----->''',
       \ 'read -p ''''  -n 1 foo',
       \]
