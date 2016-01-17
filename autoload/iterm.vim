@@ -17,7 +17,9 @@ function! Iterm#Start(command, opts)
   let newtab = a:opts.newtab
   return s:osascript(
       \ 'if application "iTerm2" is not running',
-      \   'error',
+      \   'tell application "iTerm2"',
+      \     'activate',
+      \   'end tell',
       \ 'end if') && s:osascript(
       \ 'tell application "iTerm2"',
       \   'tell current window',
