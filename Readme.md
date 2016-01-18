@@ -35,7 +35,7 @@ Requirement:
 
 * `ItermStartTab[!] [options] {command}`
 
-    Start task in a new tab session of iTerm2, options is the same as
+    Start task in a new tab session of iTerm2, options are the same as
     `ItermStart` command
 
     *NOTE:*  iTerm2 version > Build 2.9.20160103-nightly is required to make
@@ -44,7 +44,7 @@ Requirement:
 ## Global varialbes
 
 * `g:iterm_start_profile` is used for control the profile used by
-  `ItermStartTab`, you can crate a profile called `fish` that use fish shell, and 
+  `ItermStartTab`, you can crate a profile of iTerm2 called `fish` that use fish shell, and 
   config `ItermStartTab` to use fish shell by add:
 
     let g:iterm_start_profile = 'fish'
