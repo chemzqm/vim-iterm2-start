@@ -16,8 +16,8 @@ function! Iterm#Start(command, opts)
   let dir = get(a:opts, 'dir', getcwd())
   let newtab = a:opts.newtab
   return s:osascript(
-      \ 'if application "iTerm2" is not running',
-      \   'tell application "iTerm2"',
+      \ 'if application "iTerm" is not running then',
+      \   'tell application "iTerm"',
       \     'activate',
       \   'end tell',
       \ 'end if') && s:osascript(
@@ -39,8 +39,8 @@ function! Iterm#Run(command, ...)
   let opts = get(a:, 1, {})
   let active = get(opts, 'active', 0)
   return s:osascript(
-      \ 'if application "iTerm2" is not running',
-      \   'tell application "iTerm2"',
+      \ 'if application "iTerm" is not running then',
+      \   'tell application "iTerm"',
       \     'activate',
       \   'end tell',
       \ 'end if') && s:osascript(
