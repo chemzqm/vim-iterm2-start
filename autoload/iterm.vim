@@ -27,10 +27,30 @@ function! Iterm#Start(command, opts)
       \     'tell current session',
       \       'set title to "' . title . '"',
       \       'set name to "' . title . '"',
-      \       'write text ""',
       \       'write text "clear"',
       \       'write text ' . s:escape('fish ' . script. ' %self'),
       \       a:opts.active ? 'activate' : '',
+      \     'end tell',
+      \   'end tell',
+      \ 'end tell')
+endfunction
+
+function! Iterm#Run(command, ...)
+  let opts = get(a:, 1, {})
+  let active = get(opts, 'active', 0)
+  return s:osascript(
+      \ 'if application "iTerm2" is not running',
+      \   'tell application "iTerm2"',
+      \     'activate',
+      \   'end tell',
+      \ 'end if') && s:osascript(
+      \ 'tell application "iTerm2"',
+      \   'tell current window',
+      \     'create tab with default profile',
+      \     'tell current session',
+      \       'write text "clear"',
+      \       'write text ' . s:escape(a:command . ';and exit'),
+      \       active ? 'activate' : '',
       \     'end tell',
       \   'end tell',
       \ 'end tell')
