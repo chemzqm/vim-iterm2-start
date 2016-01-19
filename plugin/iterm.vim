@@ -31,6 +31,8 @@ function! s:ParseArgs(args)
       let res.title = split(str, '=')[1]
     elseif str =~# '^-no-wait'
       let res.wait = 0
+    elseif str =~# '^-silent'
+      let res.silent = 1
     else
       call add(cmds, str)
     endif

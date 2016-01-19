@@ -40,7 +40,8 @@ endfunction
 function! s:isolate(command, opts)
   let onend = a:opts.newtab ? '  kill $argv[1]' : ''
   let dir = get(a:opts, 'dir', getcwd())
-  if executable('growlnotify') && get(g:, 'iterm_start_growl_enable', 0)
+  let silence = get(a:opts, 'silent', 0)
+  if silence == 0 && executable('growlnotify') && get(g:, 'iterm_start_growl_enable', 0)
     if executable('terminal-notifier')
       let growl = 'terminal-notifier -sender org.vim.MacVim -title ''done'''
           \.'  -message '''.a:command.''''

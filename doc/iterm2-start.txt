@@ -89,6 +89,7 @@ COMMANDS 				*iterm-start-commands*
 
 	-dir=directory		Working directory for {command}
 	-title=name		title name for Item2 to display
+	-silent			disable growl notification for this command
 	-no-wait		disable the default prompt of `press enter
 				to continue` on command error
 
