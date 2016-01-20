@@ -39,11 +39,6 @@ function! Iterm#Run(command, ...)
   let opts = get(a:, 1, {})
   let active = get(opts, 'active', 0)
   return s:osascript(
-      \ 'if application "iTerm" is not running then',
-      \   'tell application "iTerm"',
-      \     'activate',
-      \   'end tell',
-      \ 'end if') && s:osascript(
       \ 'tell application "iTerm2"',
       \   'tell current window',
       \     'create tab with default profile',
