@@ -5,7 +5,7 @@
 " Version: 0.1
 " Last Modified:  December 30, 2015
 " ============================================================================
-if exists('g:did_vim_iterm2_start_loaded') || !has('gui_macvim') || v:version < 700
+if exists('g:did_vim_iterm2_start_loaded') || (!has('gui_macvim') && !has('nvim')) || v:version < 700
   finish
 endif
 
